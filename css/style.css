@@ -1,0 +1,324 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+Theme Name: Multicolor
+
+Description: Custom Design
+
+Author: Arturo Mena
+Author URI: http://www.arturomena.com
+
+Version: 1
+
+License: Exclusive. Do not duplicate or copy.
+
+
+Tags: blue, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, editor-style, custom-menu
+
+*/
+#menuBtn{display:none;}
+
+html{margin:0;}
+
+body{font-family:'Raleway'; margin: 0; width: 100%; height: 100%;}
+.container{margin-top:10px;}
+
+/* HEADER & MENU */
+header{margin:0 auto; padding: 10px 0; width: 100%; height: 80px; border-bottom: 4px solid #000; background: #fff;}
+header div{position: relative; height: 100%; width:90%; max-width:960px; margin: 0 auto;}
+header span{display: inline-block; height: 100%; line-height: 80px; vertical-align: top;}
+
+#logo{display:inline-block; width:80px; height:100%;  margin-right:10px; position: relative;}
+#logo b{position: absolute; display: block; height: 100%; width: 100%; background:url(../images/branding/logo.svg) left no-repeat; background-size:cover;}
+#logo i{display: none; width: 50%; height: 50%; top: 16%; left: 24%; background-color: #F00; position: absolute; animation: multicolor 3s infinite;}
+
+.title{display:inline-block; font-size:42px; font-weight:bold; margin-right: 10px;}
+.tagline{display:inline-block; font-size:24px;}
+
+.mobile-menu{position: absolute; width: 40px; height: 100%; top: 2px; right: 0; text-align: center; display: none;min-width: 40px;}
+.mobile-menu span{display: block; height: 5px; width: 5px; border-radius: 50%; box-sizing: border-box; background: #F00; margin: 10px auto;}
+.mobile-menu span:nth-child(2){background:#6C0;}
+.mobile-menu span:nth-child(3){background:#09C;}
+.mobile-menu.active span{background: #000;}
+
+a.header-link{position:absolute; display:block; width:100%;height:100%;vertical-align:top; min-height:60px; }
+a.header-link:hover ~ #logo b{ background-position:right;}
+a.header-link:hover ~ #logo i{ display: block;}
+
+
+
+
+#menu{height:40px; margin:20px auto 0; text-align:center; vertical-align:bottom; max-width: 960px; width: 90%;}
+#menu a{color:#000; text-decoration:none; font-weight:bold;}
+
+#menu a.rojo{border-bottom:#F00 thick solid;}
+#menu a.naranja{border-bottom:#F60 thick solid;}
+#menu a.amarillo{border-bottom:#FC0 thick solid;}
+#menu a.verde{border-bottom:#6C0 thick solid;}
+#menu a.azul{border-bottom:#09C thick solid;}
+#menu a.violeta{border-bottom:#639 thick solid;}
+
+#menu a:hover{border-bottom-color:#000; cursor:pointer;}
+#menu a:active{border-bottom-color:#000;}
+
+#menu a.active{border-bottom-color:#000;}
+
+.brand{position:relative;}
+
+
+#menuBtn.active{background:rgba(204,204,204,.5);}
+
+/*MEDIA QUERIES*/
+
+@media (max-width:960px){header div{min-width: 90%;width: auto; max-width: 100%;} #logo{margin-left: 4%;}}
+@media (max-width:640px){.title{font-size: 36px;} .tagline{font-size: 18px;}#user .column{padding-left: 0;}}
+@media (max-width: 550px) {
+    body{padding-top: 64px;}
+	#menu{display:none; position: fixed; top: 64px; background:#fff; width: 100%; height:auto; margin:0; z-index:1005;}
+	#menu a{min-height:42px; line-height:42px; vertical-align:middle;}
+	header{position:fixed; top:0; z-index:3; height: 60px; padding: 0;}
+	.tagline{display:none;}
+	.title{display: block; margin:0 auto; text-align:center; height:60px; line-height:60px; box-sizing:border-box; background:#fff; font-size:24px;}
+	#logo{position:absolute; z-index:1000; left:5px; top:5px; height:50px; width:50px; margin-left: 0;}
+	#menuBtn{display:block; width:60px; height:60px; position:absolute; z-index:1001; top:0; right:0;}
+    .mobile-menu{display: block;}
+	a.header-link{margin-left:60px;}
+	.brand{border-bottom:#CCC 1px solid;}
+    #more{width: 100% !important;}
+    #user .column{padding-left: 80px;}
+    .author-image{position: absolute; left: 0;}
+	}
+@media (max-width: 480px) {}
+
+/*INDEX*/
+
+.post{
+	position:relative;
+	border:2px #000 solid;
+	vertical-align:top;
+	margin-bottom:30px;
+	width:100%;
+	max-height:250px;
+	min-height:250px;
+	height:250px;
+	background:url(http://www.ideasmulticolor.com/wp-content/uploads/2016/01/1.jpg);
+    background-size: cover;
+    background-position: center;
+    transition:all ease-out .25s;
+	}
+
+/*POST TYPES*/
+.post-type{background-repeat: no-repeat; background-size: contain;background-size:20px 20px; background-position:5% center; padding-left:5%;}
+.post.pdv .post-type{background-image:url(../images/icons/eye.png);}
+.post.opinion .post-type{background-image:url(../images/icons/voice.png);}
+.post.pensamiento .post-type{background-image:url(../images/icons/mind.png);}
+.post.analisis .post-type{background-image:url(../images/icons/magnifier.png);}
+
+.post .permalink{position:absolute; display:block; width:100%; height:100%; z-index:1000;}
+.post .window{height:50%; background-color:rgba(0,0,0,.6); background-size:cover;  vertical-align:top; text-align:center;transition:all ease-out .25s;}
+
+.red .window,.red .hh-window{background-color: rgba(255,0,0,.6);}
+.green .window,.green .hh-window{background-color: rgba(0,255,0,.6);}
+.blue .window, .blue .hh-window{background-color: rgba(0,153,204,.6);}
+.yellow .window, .yellow .hh-window{background-color: rgba(255,204,0,.6);}
+.orange .window, .orange .hh-window{background-color: rgba(255,100,0,.6);}
+.purple .window,.purple .hh-window{background-color: rgba(150,0,255,.6);}
+
+.post .window img{width:50px;height:50px; margin-top:25px; opacity:0;transition:all ease-out .25s;}
+
+.post .content{color:#4d4d4d;height:50%; padding:5px 10px; background:#FFF; box-sizing:border-box; overflow:hidden;}
+.post .content h3{margin:5px 0; font-family:'Raleway'; font-weight:600; font-size:21px;}
+.post .content p{font-family:'Raleway'; font-size: 14px; margin-bottom:0;}
+
+.fadetop{display:block; position:absolute; bottom:0; width:100%; height:50px; background: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%); }
+
+.post .content .bottom-aligner{display:inline-block; height:90%; vertical-align:middle;}
+.post .content .bottom-content{display:inline-block; vertical-align:middle;}
+.post .post-type{font-weight:800; vertical-align:top; text-transform:uppercase; overflow:hidden; color:#fff;}
+.post .post-type img{height:100%; vertical-align:middle;}
+.post .post-author{position: relative; line-height:1; margin-top:10px;}
+.post .post-author span{position: absolute;}
+.post .post-author span.italic{position: absolute; right: 0;}
+
+.post.red, .arel.red{background-color:#F00; border-color:#F00}
+.post.blue, .arel.blue{background-color:#09C; border-color:#09C}
+.post.green,.arel.green{background-color:#6C0; border-color:#6C0;}
+.post.yellow, .arel.yellow{background-color:#FC0; border-color:#FC0;}
+.post.orange, .arel.orange{background-color:#F60; border-color:#F60;}
+.post.purple, .arel.purple{background-color:#639; border-color:#639;}
+
+.post:hover {border-color:#000;}
+.post:hover .window{background-color: transparent;}
+
+.post .bold, .post .italic{font-size:12px;}
+.italic{font-style:italic;}
+
+/*HALF-POST*/
+.hh-post{display:inline-block; position:relative; width:100%; height:125px; margin-bottom:5px; border: 1px solid; border-color:inherit; overflow:hidden; background-size: contain; transition:border ease-out .25s;}
+.hh-content{height:70%; box-sizing:border-box;padding: 0 20px; background: #fff;}
+.hh-window{height:30%; overflow:hidden; position: relative; transition: background .25s ease-out;}
+.hh-post h3, .hh-post p{margin:0; padding:0;}
+.hh-content h3{padding: 5px 0; min-height:30%; box-sizing:border-box; font-size:inherit; font-weight: 600; font-size: 2rem;}
+.hh-content p{height:70%; vertical-align:middle;}
+.hh-content p img{vertical-align:middle;}
+.hh-post a{display:block; position:absolute; height:100%; width:100%;}
+.hh-post:hover{border:#000 2px solid;}
+.hh-post:hover .hh-window{background: transparent;}
+.hh-post .post-type{position: absolute; top:0; left: 0; width: 100%; height: 100%; font-weight: 900; color: #fff; text-align: center; padding: 0;}
+
+/*PAGES & SINGLE*/
+.page-header{vertical-align:middle; padding: 10px 0 0 0;}
+.page-header h1{font-weight: 600;}
+.author-image{display:block; height:60px; width:60px; border-radius:50%; overflow:hidden; text-align:center; background-size:cover; float:left;}
+.page-header .author{display:inline-block; vertical-align:top; margin:0; box-sizing:border-box; font-size:18px;}
+.page-header .author img{vertical-align:middle; width:20px;}
+
+.featured-image{width:100%; height:500px; background:url(http://www.ideasmulticolor.com/wp-content/uploads/2016/01/1.jpg) no-repeat bottom; background-size:cover;}
+
+.page-content{font-family:'Droid Serif'; margin-top:20px; font-size:17px; line-height:2; }
+
+.page-content p:first-of-type::first-letter{float:left; border: 1px solid;vertical-align:top; font-family:'Raleway'; font-size:48px; line-height:54px;font-weight:bold; margin-right:5px; margin:0 5px 0 0; padding:0 10px; border-color: inherit;}
+
+.related h5{border-bottom:thick solid; border-color:inherit; margin:5px 0 10px 0;}
+.related.red{border-color:#F00;}
+.related.blue{border-color:#09C;}
+.related.green{border-color:#6C0;}
+.related.yellow{border-color:#FC0;}
+.related.orange{border-color:#F60;}
+.related.purple{border-color:#639;}
+
+.red .hh-post{background-color:#F00;  border-color:#F00;}
+.blue .hh-post{background-color:#09C;border-color:#09C;}
+.green .hh-post{background-color:#6C0;border-color:#6C0;}
+.yellow .hh-post{background-color:#FC0;border-color:#FC0;}
+.orange .hh-post{background-color:#F60;border-color:#F60;}
+.purple .hh-post{background-color:#639;border-color:#639;}
+
+
+.arel .red{border-color:#F00;}
+.arel .blue{border-color:#09C;}
+.arel .green{border-color:#6C0;}
+.arel .yellow{border-color:#FC0;}
+.arel .orange{border-color:#F60;}
+.arel .purple{border-color:#639;}
+
+.red *{border-color:#F00;}
+.blue *{border-color:#09C;}
+.green *{border-color:#6C0;}
+.yellow *{border-color:#FC0;}
+.orange *{border-color:#F60;}
+.purple *{border-color:#639;}
+
+.arel .red .post-type{background-color: rgba(255,0,0,.6);}
+.arel .green .post-type{background-color: rgba(0,255,0,.6);}
+.arel .blue .post-type{background-color: rgba(0,153,204,.6);}
+.arel .yellow .post-type{background-color: rgba(255,204,0,.6);}
+.arel .orange .post-type{background-color: rgba(255,100,0,.6);}
+.arel .purple .post-type{background-color: rgba(150,0,255,.6);}
+
+#more{}
+/*JUMP MENU*/
+
+#jump{position: fixed; bottom: 50%; right: 0;  }
+#jump a{display: block; border-radius: 50%; background-color: #FFF; padding: 18% 22%; margin: 5px; text-align: center;}
+#jump a:hover{background-color: #CCC;}
+    
+/*SHARE*/
+
+#share{top: -100px;}
+
+/* AUTHOR RELATED POSTS */
+.author-related{}
+.author-related h5{border-bottom:#000 thick solid; border-color:#000; margin:5px 0 10px 0;}
+
+ul.arel{list-style:none;}
+ul.arel li{border: #F00 1px solid; height:60px; background:#F00; position:relative;transition:all ease-out .25s;}
+ul.arel li:hover{background:none; border-color:#000;}
+ul.arel li:hover .post-type{background: transparent; transition:all ease-out .25s;}
+ul.arel li a{position:absolute; width:100%; height:100%; display:block; z-index:1000;}
+ul.arel .ap-image{
+    position: relative;
+	height:100%;
+	width:30%;
+	min-height:50px;
+	min-width:50px;
+	display:inline-block;
+    background: url(http://www.ideasmulticolor.com/wp-content/uploads/2016/01/1.jpg) no-repeat center;
+    background-size: cover;
+	}
+ul.arel .content{display:inline-block; height:100%; width:70%; vertical-align:top;padding-left:10px; background:#FFF; box-sizing:border-box; font-size: 18px;}
+ul.arel .post-type{
+    position: absolute;
+    top: 0;
+    left: 0;
+	height:100%;
+    width: 100%;
+    padding: 0;
+    color:#fff;
+    font-weight: 900;
+    text-align: center;
+	}
+ul.arel h3{height:100%; margin:0; padding:0; font-size:inherit; font-weight:100; font-weight: 600;}
+
+/* COMMENT SECTION */
+.comment.list{}
+.comment-divider{text-align:center;}
+.comment-divider i{color:#000; background:#FFF; display:inline-block; position:relative; width:45px;font-size: 32px;}
+li.comment{border:2px solid #000; padding:5px; list-style:none; }
+cite.fn{font-weight:bold; font-style:normal;}
+#commentform textarea{width: 100%; border: 2px solid #000; border-radius: 0;}
+#commentform #author,#commentform #email{width: 49.6%; box-sizing: border-box; border: 2px solid #000; display: none; border-radius: 0;}
+#submit{width: 50%; margin: 0 auto; background:#000; color:#fff; font-weight: bold; border-radius: 0; display: none;}
+.form-submit{text-align: center;}
+#respond h3{font-size: 2rem;}
+.comment-body{position: relative;}
+.comment-meta{position: absolute; top: 0; right: 0;}
+
+/*USER*/
+#user{margin-bottom: 25px;}
+#user h5{padding: 0; margin: 0;}
+
+
+/*ADS*/
+
+.ad{border:2px solid #999; text-align:center; padding:2%; font-family:'Raleway';}
+.post.ad:hover{border-color:#000;transition:all ease-out .25s;}
+.page-ad{width:50%; height:16.2em; margin:5px; border:#999 2px solid;}
+
+/*ICONS*/
+
+.pinguino{background:url(../images/icons/pingu.png) no-repeat;}
+.coneja{background:url(../images/icons/coneja.png) no-repeat;}
+.icon{display:inline-block; min-height:20px; min-width:20px; background-size:contain; vertical-align:bottom;}
+
+/*LOADER & INFINITE LOOP*/
+#load{height:60px;  line-height: 60px; color:#fff; text-align:center; font-family:'Raleway'; font-weight:700; font-size: 1.5em; background: #000; box-sizing: border-box; display: none;}
+#load:hover{cursor:pointer; color:#000; background:#fff; border: 2px solid #000;}
+#load i{display: none;}
+#load.loading{cursor:pointer; color:#000; background:#fff; border: 2px solid #000;}
+#load.loading i{display:inline-block;}
+#load.loading b{display:none;}
+#load.disabled{display: none; color:transparent; background:#fff; border: 2px solid #000;}
+#load.disabled b{display: none;}
+#load.disabled::after{content:"REDACTANOS TU IDEA"; color: #000; font-size: 24px;}
+/* FOOTER */
+
+footer{text-align: center; border-top:#000 solid thick; margin:10px 0; padding-top:10px;}
+footer i{margin:0 5px;}
+.disclaimer{font-weight:bold; font-family:'Raleway'; padding:0 10px; display:inline-block; width:auto;}
+.disclaimer a{color:#000;}
+.disclaimer a:hover{color:#6FF;}
+#subscribe{display:none; border:1px #000 solid; margin:0; margin-top:5px;}
+#subscribe input{border:none; margin:0; padding:0 5px; height:25px; color:#999;}
+#subscribe i{margin-right:5px;}
+.socialmedia{display:inline-block; width:auto;}
+
+
+@keyframes multicolor{
+    0%  {background-color: #F60;}
+    20%  {background-color: #FC0;}
+    40% {background-color: #6C0;}
+    60% {background-color: #09C;}
+    80% {background-color: #639;}
+    100%   {background-color: #F00;}
+}
