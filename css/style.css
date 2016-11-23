@@ -219,7 +219,7 @@ a.header-link:hover ~ #logo i{ display: block;}
 #more{}
 /*JUMP MENU*/
 
-#jump{position: fixed; bottom: 50%; right: 0;  }
+#jump{position: fixed; bottom: 50%; right: 0;  display:none;}
 #jump a{display: block; border-radius: 50%; background-color: #FFF; padding: 18% 22%; margin: 5px; text-align: center;}
 #jump a:hover{background-color: #CCC;}
     
