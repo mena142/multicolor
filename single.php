@@ -2,28 +2,31 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="row"> <div class="one-row"><div class="featured-image" style="background-image:url(<?php the_post_thumbnail_url(); ?>);"></div></div></div>
+  <div class="row"> <div class="one-row">
+      
+      <div class="featured-image" style="background-image:url(<?php the_post_thumbnail_url(); ?>);">
+      
+      </div></div></div>
   <div class="container"><?php if (have_posts()) : while (have_posts()) : the_post();?>
-  
-  <div class="row">
-  <div class="two-thirds column">
-    <div class="page-header u-cf">
-      <div id="user" class="row">
-      <span class="author-image" style="background:url()">
-          <?php $author = get_the_author_meta( 'ID' ); 
-          echo get_avatar( $author,60,$author); ?>
-      </span>
-      <div class="column one-third">
-      <span class="<?php $tag = get_the_tags(); echo $tag[0]->slug; ?>"><?php the_tags("","",""); ?></span>
-                 
-                 <h5><?php the_author(); ?></h5></div>
-                 
-                 <span class="one-third column"> <a href="<?php 
+  <div id="user" class="row">
+      <div class="column one-half">
+         <span class="category"><a href="<?php 
                   $cat = get_the_category();
                   echo esc_url(get_category_link($cat[0]->term_id)); 
-                  ?>"><?php  echo esc_html($cat[0]->name);  ?></a>
-              <h5><?php the_date( 'd/m/Y', '', '', true ); ?></h5>  </span>
+                  ?>"><?php  echo esc_html($cat[0]->name);  ?></a></span> 
+          <span class="post-type <?php $tag = get_the_tags(); echo $tag[0]->slug; ?>"><?php the_tags("","",""); ?></span></div>
+      <div class="column one-half">Por 
+          <span class="author-image">
+              <?php $author = get_the_author_meta( 'ID' ); 
+          echo get_avatar( $author,50,$author); ?>
+      </span>
+        <span class="author"><?php the_author(); ?></span>
+      <span class="date"><?php the_date( 'd/m/Y', '', '', true ); ?></span>
+      </div>
         </div>  
+  <div class="row">
+  <div id="main-column" class="two-thirds column">
+    <div class="page-header u-cf">
          <h1><?php the_title();?></h1>         
   </div>
    <div class="page-content">     
@@ -38,7 +41,7 @@
 
 </div>
   
-<div class="one-third column related <?php 
+<div id="side-column" class="one-third column related <?php 
                 $cat = get_the_category();
                 $catp = $cat[0]->category_parent; 
                 $class = get_term( $catp, 'category' );

@@ -138,5 +138,6 @@ add_action('wp_ajax_infinite_scroll', 'wp_infinitepaginate');           // for l
 add_action('wp_ajax_nopriv_infinite_scroll', 'wp_infinitepaginate');    // if user not logged in
 add_action( 'wp_head', 'open_graph_metas', 5 );
 add_action( 'widgets_init', 'arphabet_widgets_init' );
-
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
 ?>

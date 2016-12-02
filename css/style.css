@@ -71,7 +71,7 @@ a.header-link:hover ~ #logo i{ display: block;}
 /*MEDIA QUERIES*/
 
 @media (max-width:960px){header div{min-width: 90%;width: auto; max-width: 100%;} #logo{margin-left: 4%;}}
-@media (max-width:640px){.title{font-size: 36px;} .tagline{font-size: 18px;}#user .column{padding-left: 0;}}
+@media (max-width:640px){.title{font-size: 36px;} .tagline{font-size: 18px;}}
 @media (max-width: 550px) {
     body{padding-top: 64px;}
 	#menu{display:none; position: fixed; top: 64px; background:#fff; width: 100%; height:auto; margin:0; z-index:1005;}
@@ -85,8 +85,7 @@ a.header-link:hover ~ #logo i{ display: block;}
 	a.header-link{margin-left:60px;}
 	.brand{border-bottom:#CCC 1px solid;}
     #more{width: 100% !important;}
-    #user .column{padding-left: 80px;}
-    .author-image{position: absolute; left: 0;}
+    
 	}
 @media (max-width: 480px) {}
 
@@ -109,20 +108,22 @@ a.header-link:hover ~ #logo i{ display: block;}
 
 /*POST TYPES*/
 .post-type{background-repeat: no-repeat; background-size: contain;background-size:20px 20px; background-position:5% center; padding-left:5%;}
-.post.pdv .post-type{background-image:url(../images/icons/eye.png);}
-.post.opinion .post-type{background-image:url(../images/icons/voice.png);}
-.post.pensamiento .post-type{background-image:url(../images/icons/mind.png);}
-.post.analisis .post-type{background-image:url(../images/icons/magnifier.png);}
+.post.pdv .post-type, .post-type.pdv{background-image:url(../images/icons/eye.png);}
+.post.opinion .post-type, .post-type.opinion{background-image:url(../images/icons/voice.png);}
+.post.pensamiento .post-type, .post-type.pensamiento{background-image:url(../images/icons/mind.png);}
+.post.analisis .post-type, .post-type.analisis{background-image:url(../images/icons/magnifier.png);}
+.post.mensaje .post-type, .post-type.mensaje{background-image:url(../images/icons/paper-plane.png);}
+.post.reflexion .post-type, .post-type.reflexion{background-image:url(../images/icons/cloudy-day.png);}
 
 .post .permalink{position:absolute; display:block; width:100%; height:100%; z-index:1000;}
-.post .window{height:50%; background-color:rgba(0,0,0,.6); background-size:cover;  vertical-align:top; text-align:center;transition:all ease-out .25s;}
+.post .window{height:50%; background-size:cover;  vertical-align:top; text-align:center;transition:all ease-out .25s;}
 
-.red .window,.red .hh-window{background-color: rgba(255,0,0,.6);}
-.green .window,.green .hh-window{background-color: rgba(0,255,0,.6);}
-.blue .window, .blue .hh-window{background-color: rgba(0,153,204,.6);}
-.yellow .window, .yellow .hh-window{background-color: rgba(255,204,0,.6);}
-.orange .window, .orange .hh-window{background-color: rgba(255,100,0,.6);}
-.purple .window,.purple .hh-window{background-color: rgba(150,0,255,.6);}
+.post.red .post-type,.red .hh-window{background-color: rgba(255,0,0,.6);}
+.post.green .post-type,.green .hh-window{background-color: rgba(0,255,0,.6);}
+.post.blue .post-type, .blue .hh-window{background-color: rgba(0,153,204,.6);}
+.post.yellow .post-type, .yellow .hh-window{background-color: rgba(255,204,0,.6);}
+.post.orange .post-type, .orange .hh-window{background-color: rgba(255,100,0,.6);}
+.post.purple .post-type,.purple .hh-window{background-color: rgba(150,0,255,.6);}
 
 .post .window img{width:50px;height:50px; margin-top:25px; opacity:0;transition:all ease-out .25s;}
 
@@ -148,7 +149,7 @@ a.header-link:hover ~ #logo i{ display: block;}
 .post.purple, .arel.purple{background-color:#639; border-color:#639;}
 
 .post:hover {border-color:#000;}
-.post:hover .window{background-color: transparent;}
+.post:hover .window{background-color: transparent; opacity: 0;}
 
 .post .bold, .post .italic{font-size:12px;}
 .italic{font-style:italic;}
@@ -167,13 +168,13 @@ a.header-link:hover ~ #logo i{ display: block;}
 .hh-post .post-type{position: absolute; top:0; left: 0; width: 100%; height: 100%; font-weight: 900; color: #fff; text-align: center; padding: 0;}
 
 /*PAGES & SINGLE*/
-.page-header{vertical-align:middle; padding: 10px 0 0 0;}
-.page-header h1{font-weight: 600;}
-.author-image{display:block; height:60px; width:60px; border-radius:50%; overflow:hidden; text-align:center; background-size:cover; float:left;}
+.page-header{vertical-align:top;}
+.page-header h1{font-weight: 700;}
+.author-image{display:inline-block; height:50px; width:50px; border-radius:50%; overflow:hidden; text-align:center; background-size:cover; vertical-align: middle; margin:-4px 4px 0;}
 .page-header .author{display:inline-block; vertical-align:top; margin:0; box-sizing:border-box; font-size:18px;}
 .page-header .author img{vertical-align:middle; width:20px;}
 
-.featured-image{width:100%; height:500px; background:url(http://www.ideasmulticolor.com/wp-content/uploads/2016/01/1.jpg) no-repeat bottom; background-size:cover;}
+.featured-image{width:100%; height:500px; background:url(http://www.ideasmulticolor.com/wp-content/uploads/2016/01/1.jpg) no-repeat center; background-size:cover;}
 
 .page-content{font-family:'Droid Serif'; margin-top:20px; font-size:17px; line-height:2; }
 
@@ -219,8 +220,8 @@ a.header-link:hover ~ #logo i{ display: block;}
 #more{}
 /*JUMP MENU*/
 
-#jump{position: fixed; bottom: 50%; right: 0;  }
-#jump a{display: block; border-radius: 50%; background-color: #FFF; padding: 18% 22%; margin: 5px; text-align: center;}
+#jump{position: fixed; bottom: 20px; right: 0; display: none;}
+#jump a{display: block; width: 45px; height: 45px; border-radius: 50%; background-color: #FFF; margin: 5px; text-align: center; line-height: 45px; box-sizing: border-box; vertical-align: middle;}
 #jump a:hover{background-color: #CCC;}
     
 /*SHARE*/
@@ -275,8 +276,14 @@ cite.fn{font-weight:bold; font-style:normal;}
 .comment-meta{position: absolute; top: 0; right: 0;}
 
 /*USER*/
-#user{margin-bottom: 25px;}
-#user h5{padding: 0; margin: 0;}
+#user{margin: 0 -15px; padding: 5px 15px; height: 50px; background: #fff; line-height: 50px; vertical-align: middle; border-bottom: 1px solid #000; margin-bottom: 15px;}
+#user *{}
+#user .column:nth-child(2){font-size: 24px; text-align: right; }
+#user .category a{font-size: 24px; font-weight: bold; text-decoration: none;}
+#user .post-type{border-left: 1px solid #666; margin-left: 5%;}
+#user .post-type, #user .post-type a{font-size: 24px; text-decoration: none;}
+#user .author{font-size: 24px; margin-right: 15px;}
+#user .date{font-size: 18px;}
 
 
 /*ADS*/

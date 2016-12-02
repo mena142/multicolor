@@ -20,6 +20,7 @@ wp_reset_postdata();
 ?>
 </div>
 <div id="jump">
+    <a href="#"><i class="fa fa-step-backward fa-rotate-90" aria-hidden="true"></i></a>
   <a href="#"> <i class="fa fa-step-backward fa-rotate-90" aria-hidden="true"></i></a>
     <a href="#share"><i class="fa fa-share-alt fa-lg"></i></a>
     <a href="#comments"><i class="fa fa-comments fa-lg"></i></a>
