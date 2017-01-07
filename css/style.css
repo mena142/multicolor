@@ -220,6 +220,7 @@ a.header-link:hover ~ #logo i{ display: block;}
 #more{}
 /*JUMP MENU*/
 
+
 #jump{position: fixed; bottom: 20px; right: 0; display: none;}
 #jump a{display: block; width: 45px; height: 45px; border-radius: 50%; background-color: #FFF; margin: 5px; text-align: center; line-height: 45px; box-sizing: border-box; vertical-align: middle;}
 #jump a:hover{background-color: #CCC;}
