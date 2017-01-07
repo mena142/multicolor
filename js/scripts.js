@@ -2,10 +2,15 @@
 $(document).ready(function(){
     var currentURL = window.location.pathname.toLowerCase();
     
+    
+    
     //HIDE LOAD BUTTON IF IDEAS ARE LESS THAN 9
     if($(".container .post").length>=9){$("#load").show();}
     
     //JUMP MENU FUNCTIONS
+        $("#jump-button").click(function(event){
+            event.preventDefault();
+        });
      $("#jump .up, #jump .down").on("click",function(event){event.preventDefault(); return false;});
     
     $("#jump .down").on("mousedown",function(e){

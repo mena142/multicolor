@@ -15,7 +15,7 @@ if ( have_posts() ) : ?>
                 $tag = get_the_tags(); 
                 echo $tag[0]->slug; 
                 
-                ?> " style=" <?php if(has_post_thumbnail()){echo "background-image:url(";the_post_thumbnail_url('thumbnail'); echo");";} ?>">
+                ?> " style=" <?php if(has_post_thumbnail()){echo "background-image:url(";the_post_thumbnail_url('medium'); echo");";} ?>">
     <a href="<?php echo get_permalink();?>" class="permalink"></a>
     <span class="fadetop"></span>
     <div class="window"> <div class="post-type  "><?php echo $tag[0]->name ?></div></div><div class="content">
@@ -26,7 +26,12 @@ if ( have_posts() ) : ?>
 </div>
 	</div>
     <div class="post-author">
-     <span class="bold"><?php the_author(); ?></span> <span class="italic"><?php the_date( 'd/m/Y', '', '', true ); ?> </span>
+     <span class="bold"><?php the_author(); ?></span> <span class="italic">
+        <?php
+        echo get_the_date('d/m/Y');
+        //echo apply_filters( 'the_date', get_the_date(), get_option( 'date_format' ), '', '' );
+       // the_date( 'd/m/Y', '', '', true ); 
+        ?> </span>
      </div>
      </div>
 <?php $count++; if($count==3){echo "</div>"; $count = 0;}?>
